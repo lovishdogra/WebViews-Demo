@@ -10,9 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //Using URL to make request.
+        /*
+        let url = NSURL(string: "https://www.google.com")!
+        let request = NSURLRequest(URL: url)
+        webView.loadRequest(request)
+        */
+        
+        //Manually Using the html code.
+        
+        let html = "<html><body><h1 align=center>Hello Swift</h1><p align=center>This is manually written code for HTML</p></body></html>"
+        webView.loadHTMLString(html, baseURL: nil)
     }
 
     override func didReceiveMemoryWarning() {
